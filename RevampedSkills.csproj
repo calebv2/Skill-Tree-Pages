@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <AssemblyName>RevampedSkills</AssemblyName>
+    <RootNamespace>RevampedSkills</RootNamespace>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <GamePath Condition="'$(GamePath)' == ''">$(MSBuildProjectDirectory)/../Game Files</GamePath>
+    <MelonLoaderPath Condition="'$(MelonLoaderPath)' == ''">$(GamePath)/MelonLoader/net35</MelonLoaderPath>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MelonLoader"><HintPath>$(MelonLoaderPath)/MelonLoader.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="0Harmony"><HintPath>$(MelonLoaderPath)/0Harmony.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Root.Township"><HintPath>$(GamePath)/A Township Tale_Data/Managed/Root.Township.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Alta.Values"><HintPath>$(GamePath)/A Township Tale_Data/Managed/Alta.Values.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.CoreModule"><HintPath>$(GamePath)/A Township Tale_Data/Managed/UnityEngine.CoreModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.PhysicsModule"><HintPath>$(GamePath)/A Township Tale_Data/Managed/UnityEngine.PhysicsModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.TextRenderingModule"><HintPath>$(GamePath)/A Township Tale_Data/Managed/UnityEngine.TextRenderingModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Alta.Core.Runtime"><HintPath>$(GamePath)/A Township Tale_Data/Managed/Alta.Core.Runtime.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Alta.Global.Runtime"><HintPath>$(GamePath)/A Township Tale_Data/Managed/Alta.Global.Runtime.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Alta.Singletons"><HintPath>$(GamePath)/A Township Tale_Data/Managed/Alta.Singletons.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Alta.Serialization.Runtime"><HintPath>$(GamePath)/A Township Tale_Data/Managed/Alta.Serialization.Runtime.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Newtonsoft.Json"><HintPath>$(GamePath)/A Township Tale_Data/Managed/Newtonsoft.Json.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.AssetBundleModule"><HintPath>$(GamePath)/A Township Tale_Data/Managed/UnityEngine.AssetBundleModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="System.Numerics" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core.cs" />
+    <Compile Include="Progression/*.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Assets/shrine-navigation" LogicalName="RevampedSkills.ShrineBundle" />
+    <EmbeddedResource Include="Assets/shrine-placement.json" LogicalName="RevampedSkills.ShrinePlacement" />
+  </ItemGroup>
+</Project>
+
